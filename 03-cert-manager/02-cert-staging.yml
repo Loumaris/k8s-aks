@@ -1,0 +1,19 @@
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: brainops-io-staging
+  namespace: default
+spec:
+  secretName: brainops-io-staging-tls
+  issuerRef:
+    name: cert-manager-staging
+  commonName: brainops.io
+  dnsNames:
+  - brainops.io
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - brainops.io

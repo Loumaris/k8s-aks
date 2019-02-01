@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: brainops
+spec:
+  template:
+    metadata:
+      labels:
+        app: brainops
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
